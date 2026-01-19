@@ -9,6 +9,8 @@
     <button id="btn">Hello</button>
     <div id="content"></div>
 
+    <div id="content1" style="background-color: aqua;"></div>
+
     <script src="PubSub.js"></script>
     <script>
       const pb = new PubSub();
@@ -19,6 +21,15 @@
         newDiv.innerText = data.value ;
         div.appendChild(newDiv)
       })
+
+
+      pb.subscribe("event_addition", (data)=>{
+        const div = document.getElementById('content1');
+        const newDiv = document.createElement('div');
+        newDiv.innerText = data.value ;
+        div.appendChild(newDiv)
+      })
+
 
       document.getElementById("btn").addEventListener("click", () => {
         pb.publish("event_addition", {
