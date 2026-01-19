@@ -25,22 +25,22 @@ class PubSub {
   }
 }
 
-const pb = new PubSub();
+// const pb = new PubSub();
 
-const unsubscribeAirForce1 = pb.subscribe("air_force", (data) => {
-  console.log("Subscriber 1 is airforce", data);
-});
+// const unsubscribeAirForce1 = pb.subscribe("air_force", (data) => {
+//   console.log("Subscriber 1 is airforce", data);
+// });
 
-const unsubscribeAirForce2 = pb.subscribe("air_force", (data) => {
-  console.log("Subscriber 2 is airforce", data);
-});
+// const unsubscribeAirForce2 = pb.subscribe("air_force", (data) => {
+//   console.log("Subscriber 2 is airforce", data);
+// });
 
-const unsubscribeNewBalance1 = pb.subscribe("New_balance", (data) => {
-  console.log("Subscriber 1 is New_balance", data);
-});
+// const unsubscribeNewBalance1 = pb.subscribe("New_balance", (data) => {
+//   console.log("Subscriber 1 is New_balance", data);
+// });
 
-pb.publish("air_force", { announcement: "availaible" });
+// pb.publish("air_force", { announcement: "availaible" });
 
-unsubscribeAirForce1();
+// unsubscribeAirForce1();
 
-pb.publish("air_force", { announcement: "availaible" });
+// pb.publish("air_force", { announcement: "availaible" });

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Hello</button>
+    <div id="content"></div>
+
+    <script src="PubSub.js"></script>
+    <script>
+      const pb = new PubSub();
+
+      pb.subscribe("event_addition", (data)=>{
+        const div = document.getElementById('content');
+        const newDiv = document.createElement('div');
+        newDiv.innerText = data.value ;
+        div.appendChild(newDiv)
+      })
+
+      document.getElementById("btn").addEventListener("click", () => {
+        pb.publish("event_addition", {
+          value: "Event going to be happened soon",
+        });
+      });
+    </script>
+  </body>
+</html>
